@@ -3,22 +3,10 @@ var logger = require("morgan");
 var mongoose = require("mongoose");
 var exphbs = require("express-handlebars");
 
-// Our scraping tools
-// Axios is a promised-based http library, similar to jQuery's Ajax method
-// It works on the client and on the server
-var axios = require("axios");
-var cheerio = require("cheerio");
-
-
-
-// Require all models
-var db = require("./models");
-
-var PORT = 8080;
-
 // Initialize Express
 var app = express();
 
+var PORT = process.env.PORT || 8080;
 // Configure middleware
 
 // Use morgan logger for logging requests
@@ -39,9 +27,9 @@ app.engine(
 );
 app.set("view engine", "handelbars");
 
-require("./routes/htmlroutes")(app);
-require("./routes/scraperoutes")(app);
-require("./routes/commentroutes")(app);
+require("./routes/htmlRoutes")(app);
+require("./routes/scrapeRoutes")(app);
+require("./routes/commentRoutes")(app);
 
 // if  deployed use the deployed database. Otherwise use the local mongoheadlines database
 var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/mongoHeadlines";
