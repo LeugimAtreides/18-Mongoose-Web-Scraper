@@ -1,1 +1,29 @@
-<h1> Hello World </h1>
+<div class="container.fluid">
+    <div class="row justify-content-center">
+        <div class="col-lg-12">
+            <div class="jumbotron text-center">
+                <h1>Mongo NFL News Scraper</h1>
+                <br>
+                <h2>A an application to gather news from around the league</h2>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container.fluid">
+    <div class="row">
+        <div class="col-lg-12">
+            <ul class="list-group list-group-flush">
+                {{#if exists}}
+                    {{#each Article}}
+                        {{> article/article-block exists=true }}
+                    {{/each}}
+                {{/if}}
+
+                {{#unless exists}}
+                    {{> article/article-block exists=false}}
+                {{/unless}}
+            </ul>
+        </div>
+    </div>
+</div>

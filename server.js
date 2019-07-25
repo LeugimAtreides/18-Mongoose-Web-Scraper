@@ -25,7 +25,7 @@ app.engine(
         defaultLayout: "main"
     })
 );
-app.set("view engine", "handelbars");
+app.set("view engine", "handlebars");
 
 require("./routes/htmlRoutes")(app);
 require("./routes/scrapeRoutes")(app);

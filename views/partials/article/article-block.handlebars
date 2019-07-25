@@ -1,0 +1,17 @@
+<li class="list-group-items" data-id="{{id}}" data-exists="{{exists}}">
+    
+    {{#if exists}}
+
+        {{Article.title}}
+        <br>
+        {{Article.link}}
+        <button class="add-comment" data-id="{{this.id}}">Add Comment</button>
+
+    {{else}}
+
+        <h1 class="user-scrape">Scrape for Some News!</h1>
+        <button class="scrape-news">SCRAPE</button>
+
+    {{/if}}
+    
+</li>

@@ -2,7 +2,7 @@
   "name": "18-mongoose-web-scraper",
   "version": "1.0.0",
   "description": "Web News Article Scraper",
-  "main": "public",
+  "main": "index",
   "scripts": {
     "test": "npm run test"
   },
