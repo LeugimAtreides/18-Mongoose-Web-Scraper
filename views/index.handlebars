@@ -12,21 +12,19 @@
 
 <div class="container.fluid">
     <div class="row">
-        <div class="col-lg-12 card">
-            <div class="card-header">
-                <h4 class="display-4">
-                    News From Around The NFL
-                </h4>
-            </div>
+        <div class="col-lg-12">
+            {{#if exists}}
+                {{> article-header/articleheader-block }}
+            {{/if}}
             <ul class="list-group list-group-flush">
                 {{#if exists}}
                     {{#each Article}}
-                        {{> article/article-block exists=true }}
+                        {{> article/article-block }}
                     {{/each}}
                 {{/if}}
 
                 {{#unless exists}}
-                    {{> article/article-block exists=false}}
+                    {{> scrape/scrape-block }}
                 {{/unless}}
             </ul>
         </div>

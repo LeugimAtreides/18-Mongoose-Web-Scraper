@@ -2,12 +2,17 @@
 $(document).on("ready", function () {
 
     // Grab all the articles as a JSON
-    $(".scrape-news").on("click", function (event) {
-
+    $(document).on("click", "#scrape-news", function (event) {
+        console.log("Mic Check");
         $.get("/scrape", function (data) {
 
             var hbsOjbect = {
-                Article: data
+                Article: {
+                    title: data.title,
+                    link: data.link,
+                    id: data._id,
+                    exists: data.exists,
+                }
             };
             console.log(hbsOjbect);
             render("index", hbsOjbect)

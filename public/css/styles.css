@@ -6,7 +6,7 @@ body, html {
 #bg {
     background-image: url("../img/nfl-scraper-background.jpg");  
     /* Full height */
-    height: 100vh;
+    height: 86vh;
     min-width: 100%;
   
     /* Center and scale the image nicely */
@@ -45,10 +45,14 @@ body, html {
 
 }
 
-.scrape-news {
+#scrape-news {
     background-color: #124171;
     width: 20vh;
     z-index: 50000;
     position: relative;
     top: 3vh;
+}
+
+.row {
+    max-width: 100%;
 }
