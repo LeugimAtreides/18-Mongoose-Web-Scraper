@@ -27,9 +27,10 @@ app.engine(
 );
 app.set("view engine", "handlebars");
 
-require("./routes/htmlRoutes")(app);
+
 require("./routes/scrapeRoutes")(app);
 require("./routes/commentRoutes")(app);
+require("./routes/htmlRoutes")(app);
 
 // if  deployed use the deployed database. Otherwise use the local mongoheadlines database
 var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/mongoHeadlines";
