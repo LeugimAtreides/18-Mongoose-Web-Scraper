@@ -1,6 +1,6 @@
 var db = require("../models");
 
-module.exports = function (app) {
+module.exports = function(app) {
     // load index page
     // Route for getting all Articles from the db
     app.get("/", function (req, res) {

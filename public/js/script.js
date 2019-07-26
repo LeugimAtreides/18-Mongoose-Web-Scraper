@@ -1,6 +1,6 @@
 // set up the jQuery to run only when the document is fully loaded
-$(document).on("ready", function () {
-
+$(document).ready(function () {
+    console.log("ready");
     // Grab all the articles as a JSON
     $(document).on("click", "#scrape-news", function (event) {
         console.log("Mic Check");
