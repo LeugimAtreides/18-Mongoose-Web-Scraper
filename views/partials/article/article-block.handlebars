@@ -1,17 +1,18 @@
-<li class="list-group-items" data-id="{{id}}" data-exists="{{exists}}">
-    
+<li class="list-group-items text-center align-middle" data-id="{{Article._id}}" data-doesexist="{{exists}}">
+
     {{#if exists}}
-
-        {{Article.title}}
-        <br>
-        {{Article.link}}
-        <button class="add-comment" data-id="{{this.id}}">Add Comment</button>
-
+    <form class="form-inline" id="article">
+        <a href="{{Article.link}}" class="article-item">
+            <h1>{{Article.title}}</h1>
+        </a>
+        <input class="form-control form-control-lg comment-body" type="text" placeholder="Add a comment...">
+        <button type="submit" class="add-comment" data-id="{{Article._Id}}">Add Comment</button>
+    </form>
     {{else}}
 
-        <h1 class="user-scrape">Scrape for Some News!</h1>
-        <button class="scrape-news">SCRAPE</button>
+    {{!-- <h1 class="user-scrape align-middle display-4 content-alignment">Scrape for Some News!</h1> --}}
+    <button class="scrape-news btn btn-lg btn-primary content-alignment" data-id="{{this.id}}" data-doesexists="{{doesnt_exist}}>SCRAPE</button>
 
     {{/if}}
-    
+
 </li>

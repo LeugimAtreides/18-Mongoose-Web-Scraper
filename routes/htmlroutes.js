@@ -10,7 +10,7 @@ module.exports = function (app) {
                 // If any Articles are found, send them to the client
                 res.render("index", {
                     msg: "Scrape Complete!",
-                    articles: dbArticles
+                    Article: dbArticles
                 })
             })
             .catch(function (err) {
